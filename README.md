@@ -27,3 +27,7 @@ Istio is an open source service mesh which is also packaged and supported in the
 ## Sandbox layout
 
   ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/sandbox_layout.PNG)
+
+## Bookinfo App: service mesh topology with Istio
+
+  ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology.PNG)
