@@ -38,36 +38,36 @@ Istio is an open source service mesh which is also packaged and supported in the
 ### Get kubernetes cluster nodes
 <pre>$kubectl get nodes -o wide</pre>
 
-#### Verify Istio Control Plane Installation
+### Verify Istio Control Plane Installation
 <pre>$kubectl get pods -n istio-system</pre>
 
-#### Bookinfo Application without Istio
+### Bookinfo Application without Istio
 <pre>$cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
 <pre>$cat bookinfo.yaml </pre>
 
-#### Bookinfo Application with Istio
+### Bookinfo Application with Istio
 <pre>$istioctl kube-inject -f bookinfo.yaml > bookinfo_with_istio.yaml </pre>
 <pre>$cat bookinfo_with_istio.yaml </pre>
 <pre>$kubectl apply –f bookinfo_with_istio.yaml  </pre>
 <pre>$kubectl get pods -o wide </pre>
 
-#### Bookinfo Application add ingress gateway
+### Bookinfo Application add ingress gateway
 <pre>$cd /home/developer/istio-1.2.2/samples/networking/ </pre>
 <pre>$kubectl apply –f bookinfo-gateway.yaml </pre>
 
-#### 
+### Bookinfo Application: retrive external IP
+<pre>$kubectl get svc -n istio-system | grep ingress </pre>
+
+### Bookinfo Application: try it out 
+<pre>http://10.10.20.30/productpage </pre>
+
+###
 <pre> </pre>
 
-#### 
+###
 <pre> </pre>
 
-#### 
-<pre> </pre>
-
-#### 
-<pre> </pre>
-
-#### 
+###
 <pre> </pre>
 
 
