@@ -24,4 +24,4 @@ Istio is an open source service mesh which is also packaged and supported in the
  <li>Conclusion</li>
  </ol>
 
-<br>
+## Sandbox layout
