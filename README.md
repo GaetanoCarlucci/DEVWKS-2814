@@ -43,16 +43,32 @@ Istio is an open source service mesh which is also packaged and supported in the
 
 #### Bookinfo Application without Istio
 <pre> $cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
+<pre> $cat bookinfo.yaml </pre>
 
-### 
+#### Bookinfo Application with Istio
+<pre> $istioctl kube-inject -f bookinfo.yaml > bookinfo_with_istio.yaml </pre>
+<pre>$cat bookinfo_with_istio.yaml </pre>
+<pre>$kubectl apply –f bookinfo_with_istio.yaml  </pre>
+<pre>$kubectl get pods -o wide </pre>
+
+#### Bookinfo Application add ingress gateway
+<pre> $cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>$kubectl apply –f bookinfo-gateway.yaml </pre>
+
+#### 
 <pre> </pre>
 
-### 
+#### 
 <pre> </pre>
 
-### 
+#### 
 <pre> </pre>
 
+#### 
+<pre> </pre>
+
+#### 
+<pre> </pre>
 
 
 #### Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
