@@ -59,7 +59,7 @@ Istio is an open source service mesh which is also packaged and supported in the
 <pre>$kubectl get svc -n istio-system | grep ingress </pre>
 
 ### Bookinfo Application: try it out 
-<pre>http://10.10.20.30/productpage </pre>
+http://10.10.20.30/productpage 
 
 ###
 <pre> </pre>
