@@ -32,6 +32,29 @@ Istio is an open source service mesh which is also packaged and supported in the
 
   ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology.PNG)
 
-## Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
+
+## Sequence of commands
+
+#### Get kubernetes cluster nodes
+<pre>$kubectl get nodes -o wide</pre>
+
+#### Verify Istio Control Plane Installation
+<pre> $kubectl get pods -n istio-system</pre>
+
+#### Bookinfo Application without Istio
+<pre> $cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
+
+### 
+<pre> </pre>
+
+### 
+<pre> </pre>
+
+### 
+<pre> </pre>
+
+
+
+#### Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
 <pre>curl -H "Accept: application/json" -H "Content-Type: application/merge-patch+json" -X PATCH http://localhost:8001/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/reviews -d '{"metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"networking.istio.io/v1alpha3\",\"kind\":\"VirtualService\",\"metadata\":{\"annotations\":{},\"name\":\"reviews\",\"namespace\":\"default\"},\"spec\":{\"hosts\":[\"reviews\"],\"http\":[{\"route\":[{\"destination\":{\"host\":\"reviews\",\"subset\":\"v1\"},\"weight\":20},{\"destination\":{\"host\":\"reviews\",\"subset\":\"v2\"},\"weight\":80}]}]}}\n"}},"spec":{"http":[{"route":[{"destination":{"host":"reviews","subset":"v1"},"weight":20},{"destination":{"host":"reviews","subset":"v2"},"weight":80}]}]}}'
 </pre>
