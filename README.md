@@ -35,7 +35,7 @@ Istio is an open source service mesh which is also packaged and supported in the
 
 ## Sequence of commands
 
-#### Get kubernetes cluster nodes
+### Get kubernetes cluster nodes
 <pre>$kubectl get nodes -o wide</pre>
 
 #### Verify Istio Control Plane Installation
