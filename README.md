@@ -1,5 +1,4 @@
 # DEVWKS-2814
-Cisco Live DEVWKS-2814 
 <br>
 **Session Code:**  DEVWKS-2814 <br>
 **WebEX Room:**  http://cs.co/eventsbot#DEVWKS-2814 <br>
