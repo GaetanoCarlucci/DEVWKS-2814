@@ -25,3 +25,5 @@ Istio is an open source service mesh which is also packaged and supported in the
  </ol>
 
 ## Sandbox layout
+
+  ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/sandbox_layout.PNG)
