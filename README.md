@@ -3,6 +3,10 @@
 
 **Session Code:**  DEVWKS-2814 <br>
 **WebEX Room:** http://cs.co/eventsbot#DEVWKS-2814 <br>
+**AnyConnect link:** devnetsandbox-us-sjc.cisco.com:XXXXX<br>
+**AnyConnect password:** XXXXX<br>
+**SSH to Kubernetes Master:** developer@10.10.20.21
+**SSH password:** C1sco12345
 <br>
 
 **Title:** DevNet Workshop: Let's Play with Istio: service meshes for high-scale container environments<br>
