@@ -29,17 +29,17 @@ Istio is an open source service mesh which is also packaged and supported in the
   ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/sandbox_layout.PNG)
 
 ## Bookinfo App: service mesh topology without Istio
-Bookinfo Application is a virtual library for books description and ratings. It is a webpage that shows the book details, reviews, and ratings from readers. <br>
-It consists of 4 four separate microservices (product page, detail, review, rating) written in different program languages. This is the value of microservice having each microservice completely independent from each other. <br>
-Each box in the picture is a Kubernetes deployment with a Kubernetes service attached to it. Each deployment has one pod with one container inside. <br>
-The review is divided into three deployments each one with a different version. Version 1 does not have a connection to the rating service, version 2 shows the ratings stars in black and verions 3 in red. <br>
+Bookinfo Application is a virtual library for books description and ratings. It is a webpage that shows the book details, reviews, and ratings from readers. <br><br>
+It consists of 4 four separate microservices (product page, detail, review, rating) written in different program languages. This is the value of microservice having each microservice completely independent from each other. <br><br>
+Each box in the picture is a Kubernetes deployment with a Kubernetes service attached to it. Each deployment has one pod with one container inside. <br><br>
+The review is divided into three deployments each one with a different version. Version 1 does not have a connection to the rating service, version 2 shows the ratings stars in black and verions 3 in red. <br><br>
 By default, without Istio the product page accesses to the review versions in a round-robin fashion.
   ![Bookinfo App](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology_without_Istio.PNG)
 
 ## Bookinfo App: service mesh topology with Istio
-When we add Istio to our application service mesh, we add one sidecar container to our pods that intercepts the requests coming in and out the pod. <br>
-In this way, all traffic that the mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around the service mesh without making any changes to your services.<br>
-Each pod in the review service has a Kubernetes label that defines the version of the app. This is important for Istio to route traffic based on that version.<br>
+When we add Istio to our application service mesh, we add one sidecar container to our pods that intercepts the requests coming in and out the pod. <br><br>
+In this way, all traffic that the mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around the service mesh without making any changes to your services.<br><br>
+Each pod in the review service has a Kubernetes label that defines the version of the app. This is important for Istio to route traffic based on that version.<br><br>
   ![Bookinfo App](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology.PNG)
 
 
