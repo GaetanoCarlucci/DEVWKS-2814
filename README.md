@@ -101,8 +101,7 @@ reviews-v3-8496dbbbbf-4ftsq      2/2     Running   0          2m34s   10.38.0.5 
 Retrive external IP:
 <pre>kubectl get svc -n istio-system | grep ingress </pre>
 ##### Expected output
-<pre>[developer@netmaster networking]$ kubectl get svc -n istio-system | grep ingress 
-istio-ingressgateway     LoadBalancer   10.107.63.250    10.10.20.30   15020:30392/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:30194/TCP,15030:30191/TCP,15031:31372/TCP,15032:32031/TCP,15443:31403/TCP   3h44m</pre>
+<pre>istio-ingressgateway     LoadBalancer   10.107.63.250    10.10.20.30   15020:30392/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:30194/TCP,15030:30191/TCP,15031:31372/TCP,15032:32031/TCP,15443:31403/TCP   3h46m</pre>
 
 ### Bookinfo Application: try it out 
 http://10.10.20.30/productpage 
