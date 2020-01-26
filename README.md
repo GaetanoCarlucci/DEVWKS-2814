@@ -116,7 +116,6 @@ In this example, we create 3 subsets named “v1”, “v2” and “v3” that 
 <pre>kubectl apply -f destination-rule-all.yaml </pre>
 ##### Expected output
 <pre>kubectl  get destinationrule
-<pre>
 NAME          HOST          AGE
 details       details       13s
 productpage   productpage   13s
