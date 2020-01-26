@@ -45,8 +45,27 @@ worker1     Ready    <none>   162m   v1.15.0   10.10.20.22   <none>        CentO
 worker2     Ready    <none>   162m   v1.15.0   10.10.20.23   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
 worker3     Ready    <none>   162m   v1.15.0   10.10.20.24   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
 </pre>
+
 ### Verify Istio Control Plane Installation
 <pre>kubectl get pods -n istio-system</pre>
+##### Expected output
+<pre>NAME                                      READY   STATUS      RESTARTS   AGE
+grafana-6575997f54-vsfmx                  1/1     Running     0          3h42m
+istio-citadel-894d98c85-bk6jk             1/1     Running     0          3h42m
+istio-cleanup-secrets-1.2.2-trgwh         0/1     Completed   0          3h42m
+istio-egressgateway-9b7866bf5-2lr6k       1/1     Running     0          3h42m
+istio-galley-5b984f89b-5czkx              1/1     Running     0          3h42m
+istio-grafana-post-install-1.2.2-t8n4b    0/1     Completed   0          3h42m
+istio-ingressgateway-75ddf64567-n6949     1/1     Running     0          3h42m
+istio-pilot-5d77c559d4-9rnsk              2/2     Running     0          3h42m
+istio-policy-86478df5d4-p8c2s             2/2     Running     1          3h42m
+istio-security-post-install-1.2.2-5x2cb   0/1     Completed   0          3h42m
+istio-sidecar-injector-7b98dd6bcc-mjpnj   1/1     Running     0          3h42m
+istio-telemetry-786747687f-8tkgs          2/2     Running     1          3h42m
+istio-tracing-555cf644d-sb2hc             1/1     Running     0          3h42m
+kiali-6cd6f9dfb5-84qhd                    1/1     Running     0          3h42m
+prometheus-7d7b9f7844-l6ngg               1/1     Running     0          3h42m
+</pre>
 
 ### Bookinfo Application without Istio
 Bookinfo Application is a virtual library for books description and ratings. It is a webpage that shows the book details, reviews, and ratings from readers. <br>
