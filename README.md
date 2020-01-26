@@ -37,7 +37,6 @@ Istio is an open source service mesh which is also packaged and supported in the
 
 ### Get kubernetes cluster nodes
 <pre>kubectl get nodes -o wide</pre>
-
 ##### Expected output
 <pre>
 NAME        STATUS   ROLES    AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME
@@ -49,15 +48,12 @@ worker3     Ready    <none>   162m   v1.15.0   10.10.20.24   <none>        CentO
 ### Verify Istio Control Plane Installation
 <pre>kubectl get pods -n istio-system</pre>
 
-##### Expected output
-
 ### Bookinfo Application without Istio
 Bookinfo Application is a virtual library for books description and ratings. It is a webpage that shows the book details, reviews, and ratings from readers. <br>
 It consists of 4 four separate microservices (product page, detail, review, rating) written in different program languages. This is the value of microservice having each microservice completely independent from each other.<br>
 Each box in the picture is a Kubernetes deployment with a Kubernetes service attached to it. Each deployment has one pod with one container inside.<br>
 The review is divided into three deployments each one with a different version. One that does not have a connection to the rating service, one that shows the ratings in black and one in red.<br>
 By default, without Istio the product page accesses to the review versions in a round-robin fashion.<br>
-
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
 <pre>cat bookinfo.yaml </pre>
 
@@ -69,7 +65,6 @@ Each pod in the review service has a Kubernetes label that defines the version o
 <pre>cat bookinfo_with_istio.yaml </pre>
 <pre>kubectl apply -f bookinfo_with_istio.yaml  </pre>
 <pre>kubectl get pods -o wide </pre>
-
 ##### Expected output
 <pre>
 NAME                             READY   STATUS    RESTARTS   AGE     IP           NODE      NOMINATED NODE   READINESS GATES
@@ -80,8 +75,9 @@ reviews-v1-77bcd5d4f5-zcfm4      2/2     Running   0          2m34s   10.38.0.6 
 reviews-v2-7cdb7475fb-wjqrl      2/2     Running   0          2m34s   10.46.0.10   worker3   none           none
 reviews-v3-8496dbbbbf-4ftsq      2/2     Running   0          2m34s   10.38.0.5    worker1   none           none
 </pre>
+
 ### Bookinfo Application add ingress gateway
-<pre>cd cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
+<pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f bookinfo-gateway.yaml </pre>
 Retrive external IP:
 <pre>kubectl get svc -n istio-system | grep ingress </pre>
@@ -91,29 +87,31 @@ Retrive external IP:
 http://10.10.20.30/productpage 
 
 ### Route based on application version: DestinationRule
-<pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f destination-rule-all.yaml </pre>
 ##### Expected output
 
 ### Route based on application version: VirtualService
-<pre>cd cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
+<pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
 <pre>$kubectl describe virtualservice review</pre>
 
 ### Route based on user identity
-<pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 Modify **virtual-service-reviews-jason-v2-v3.yaml** by inserting your name and apply it.
 <pre>kubectl apply -f virtual-service-reviews-jason-v2-v3.yaml </pre>
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
+
 ### Traffic shifting: 80% v1 - 20% v2
-<pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-reviews-80-20.yaml </pre>
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
+
 ### Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
 <pre>curl -H "Accept: application/json" -H "Content-Type: application/merge-patch+json" -X PATCH http://localhost:8001/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/reviews -d '{"metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"networking.istio.io/v1alpha3\",\"kind\":\"VirtualService\",\"metadata\":{\"annotations\":{},\"name\":\"reviews\",\"namespace\":\"default\"},\"spec\":{\"hosts\":[\"reviews\"],\"http\":[{\"route\":[{\"destination\":{\"host\":\"reviews\",\"subset\":\"v1\"},\"weight\":20},{\"destination\":{\"host\":\"reviews\",\"subset\":\"v2\"},\"weight\":80}]}]}}\n"}},"spec":{"http":[{"route":[{"destination":{"host":"reviews","subset":"v1"},"weight":20},{"destination":{"host":"reviews","subset":"v2"},"weight":80}]}]}}'
 </pre>
