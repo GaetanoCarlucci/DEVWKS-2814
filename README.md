@@ -179,18 +179,15 @@ Spec:
   Hosts:
     reviews
   Http:
-    Match:
-      Headers:
-        End - User:
-          Exact:  gaetano
     Route:
+      Destination:
+        Host:    reviews
+        Subset:  v1
+      Weight:    80
       Destination:
         Host:    reviews
         Subset:  v2
-    Route:
-      Destination:
-        Host:    reviews
-        Subset:  v3
+      Weight:    20
 </pre>
 
 ### Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
@@ -205,16 +202,13 @@ Spec:
   Hosts:
     reviews
   Http:
-    Match:
-      Headers:
-        End - User:
-          Exact:  gaetano
     Route:
+      Destination:
+        Host:    reviews
+        Subset:  v1
+      Weight:    20
       Destination:
         Host:    reviews
         Subset:  v2
-    Route:
-      Destination:
-        Host:    reviews
-        Subset:  v3
+      Weight:    80
 </pre>
