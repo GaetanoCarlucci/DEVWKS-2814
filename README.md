@@ -126,7 +126,7 @@ reviews       reviews       13s
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
-<pre>$kubectl describe virtualservice review
+<pre>kubectl describe virtualservice review
 Name:         reviews
 ....
   Hosts:
@@ -136,7 +136,6 @@ Name:         reviews
       Destination:
         Host:    reviews
         Subset:  v1
-Events:          <none>
 </pre>
 
 ### Route based on user identity
@@ -145,7 +144,7 @@ Modify **virtual-service-reviews-jason-v2-v3.yaml** by inserting your name and a
 <pre>kubectl apply -f virtual-service-reviews-jason-v2-v3.yaml </pre>
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
-<pre>kubectl describe virtualservice review</pre>
+<pre>kubectl describe virtualservice review
 Name:         reviews
 ...
 Spec:
@@ -164,8 +163,7 @@ Spec:
       Destination:
         Host:    reviews
         Subset:  v3
-Events:          <none>
-
+</pre>
 ### Traffic shifting: 80% v1 - 20% v2
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-reviews-80-20.yaml </pre>
