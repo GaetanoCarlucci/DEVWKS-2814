@@ -81,7 +81,7 @@ prometheus-7d7b9f7844-l6ngg               1/1     Running     0          3h42m
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
 <pre>cat bookinfo.yaml </pre>
 
-### Bookinfo Application with Istio
+### Enabling Istio in Bookinfo Application
 <pre>istioctl kube-inject -f bookinfo.yaml > bookinfo_with_istio.yaml </pre>
 <pre>cat bookinfo_with_istio.yaml </pre>
 <pre>kubectl apply -f bookinfo_with_istio.yaml  </pre>
