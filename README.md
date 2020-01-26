@@ -52,6 +52,12 @@ worker3     Ready    <none>   162m   v1.15.0   10.10.20.24   <none>        CentO
 ##### Expected output
 
 ### Bookinfo Application without Istio
+Bookinfo Application is a virtual library for books description and ratings. It is a webpage that shows the book details, reviews, and ratings from readers. <br>
+It consists of 4 four separate microservices (product page, detail, review, rating) written in different program languages. This is the value of microservice having each microservice completely independent from each other.<br>
+Each box in the picture is a Kubernetes deployment with a Kubernetes service attached to it. Each deployment has one pod with one container inside.<br>
+The review is divided into three deployments each one with a different version. One that does not have a connection to the rating service, one that shows the ratings in black and one in red.<br>
+By default, without Istio the product page accesses to the review versions in a round-robin fashion.<br>
+
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/platform/kube </pre>
 <pre>cat bookinfo.yaml </pre>
 
