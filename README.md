@@ -39,13 +39,14 @@ Istio is an open source service mesh which is also packaged and supported in the
 <pre>kubectl get nodes -o wide</pre>
 
 ##### Expected output
+<pre>
 [developer@netmaster ~]$ kubectl get nodes -o wide
 NAME        STATUS   ROLES    AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME
 netmaster   Ready    master   163m   v1.15.0   10.10.20.21   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
 worker1     Ready    <none>   162m   v1.15.0   10.10.20.22   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
 worker2     Ready    <none>   162m   v1.15.0   10.10.20.23   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
 worker3     Ready    <none>   162m   v1.15.0   10.10.20.24   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
-
+</pre>
 ### Verify Istio Control Plane Installation
 <pre>kubectl get pods -n istio-system</pre>
 
