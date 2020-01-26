@@ -74,7 +74,7 @@ Each pod in the review service has a Kubernetes label that defines the version o
 
 ### Bookinfo Application add ingress gateway
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
-<pre>kubectl apply –f bookinfo-gateway.yaml </pre>
+<pre>kubectl apply -f bookinfo-gateway.yaml </pre>
 Retrive external IP:
 <pre>kubectl get svc -n istio-system | grep ingress </pre>
 ##### Expected output
@@ -84,12 +84,12 @@ http://10.10.20.30/productpage
 
 ### Route based on application version: DestinationRule
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
-<pre>kubectl apply –f destination-rule-all.yaml </pre>
+<pre>kubectl apply -f destination-rule-all.yaml </pre>
 ##### Expected output
 
 ### Route based on application version: VirtualService
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
-<pre>kubectl apply –f virtual-service-all-v1.yaml </pre>
+<pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
 <pre>$kubectl describe virtualservice review</pre>
 
@@ -102,7 +102,7 @@ Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
 ### Traffic shifting: 80% v1 - 20% v2
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
-<pre>kubectl apply –f virtual-service-reviews-80-20.yaml </pre>
+<pre>kubectl apply -f virtual-service-reviews-80-20.yaml </pre>
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
