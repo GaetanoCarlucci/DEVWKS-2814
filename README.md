@@ -3,8 +3,8 @@
 
 **Session Code:**  DEVWKS-2814 <br>
 **WebEX Room:** http://cs.co/eventsbot#DEVWKS-2814 <br>
-**AnyConnect link:** <ins>devnetsandbox-us-sjc.cisco.com:XXXXX</ins> <em>.(Ports is on your desk)</em>.<br>
-**AnyConnect password:** XXXXX <em>.(Password is on your desk)</em>.<br>  
+**AnyConnect link:** <ins>devnetsandbox-us-sjc.cisco.com:XXXXX</ins> <em>(Ports is on your desk)</em><br>
+**AnyConnect password:** XXXXX <em> (Password is on your desk)</em><br>  
 **SSH to Kubernetes Master:** developer@10.10.20.21 <br> 
 **SSH password:** C1sco12345 <br> 
 <br>
