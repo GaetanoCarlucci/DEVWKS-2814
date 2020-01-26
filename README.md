@@ -142,9 +142,33 @@ Name:         reviews
 ### Exercise: Route all traffic to Version 2
 Modify **virtual-service-all-v1.yaml**
 <pre>
-
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+  - reviews
+  http:
+  - route:
+    - destination:
+        host: reviews
+        subset: v2
 </pre>
-
+Then deploy it:
+<pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
+##### Expected output
+<pre>kubectl describe virtualservice review
+Name:         reviews
+....
+  Hosts:
+    reviews
+  Http:
+    Route:
+      Destination:
+        Host:    reviews
+        Subset:  v2
+</pre>
 
 ### Route based on user identity
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
