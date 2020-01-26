@@ -62,6 +62,9 @@ By default, without Istio the product page accesses to the review versions in a 
 <pre>cat bookinfo.yaml </pre>
 
 ### Bookinfo Application with Istio
+When we add Istio to our application service mesh we add one sidecar container to our pods that intercept the requests coming in and out the pod. <br>
+In this way, all traffic that the mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around the service mesh without making any changes to your services.<br>
+Each pod in the review service has a Kubernetes label that defines the version of the app. This is important for Istio to route traffic based on that version.<br>
 <pre>istioctl kube-inject -f bookinfo.yaml > bookinfo_with_istio.yaml </pre>
 <pre>cat bookinfo_with_istio.yaml </pre>
 <pre>kubectl apply –f bookinfo_with_istio.yaml  </pre>
