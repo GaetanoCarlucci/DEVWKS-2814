@@ -73,12 +73,12 @@ Each pod in the review service has a Kubernetes label that defines the version o
 ##### Expected output
 <pre>
 NAME                             READY   STATUS    RESTARTS   AGE     IP           NODE      NOMINATED NODE   READINESS GATES
-details-v1-677976f7dc-2zhzw      2/2     Running   0          2m34s   10.40.0.6    worker2   <none>           <none>
-productpage-v1-f76db69c5-lsd9h   2/2     Running   0          2m33s   10.46.0.9    worker3   <none>           <none>
-ratings-v1-7f66cd4c87-8vnbq      2/2     Running   0          2m34s   10.46.0.4    worker3   <none>           <none>
-reviews-v1-77bcd5d4f5-zcfm4      2/2     Running   0          2m34s   10.38.0.6    worker1   <none>           <none>
-reviews-v2-7cdb7475fb-wjqrl      2/2     Running   0          2m34s   10.46.0.10   worker3   <none>           <none>
-reviews-v3-8496dbbbbf-4ftsq      2/2     Running   0          2m34s   10.38.0.5    worker1   <none>           <none>
+details-v1-677976f7dc-2zhzw      2/2     Running   0          2m34s   10.40.0.6    worker2   none           none
+productpage-v1-f76db69c5-lsd9h   2/2     Running   0          2m33s   10.46.0.9    worker3   none           none
+ratings-v1-7f66cd4c87-8vnbq      2/2     Running   0          2m34s   10.46.0.4    worker3   none           none
+reviews-v1-77bcd5d4f5-zcfm4      2/2     Running   0          2m34s   10.38.0.6    worker1   none           none
+reviews-v2-7cdb7475fb-wjqrl      2/2     Running   0          2m34s   10.46.0.10   worker3   none           none
+reviews-v3-8496dbbbbf-4ftsq      2/2     Running   0          2m34s   10.38.0.5    worker1   none           none
 </pre>
 ### Bookinfo Application add ingress gateway
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
