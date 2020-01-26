@@ -73,11 +73,17 @@ http://10.10.20.30/productpage
 <pre>$cd /home/developer/istio-1.2.2/samples/networking/ </pre>
 Modify **virtual-service-reviews-jason-v2-v3.yaml** by inserting your name and apply it.
 <pre>$kubectl apply –f virtual-service-reviews-jason-v2-v3.yaml </pre>
-
+Verify that the virutal service has been implemented as expected:
+<pre>$kubectl describe virtualservice review</pre>
 ### Traffic shifting: 80% v1 - 20% v2
 <pre>$cd /home/developer/istio-1.2.2/samples/networking/ </pre>
 <pre>$kubectl apply –f virtual-service-reviews-80-20.yaml </pre>
-
+Verify that the virutal service has been implemented as expected:
+<pre>$kubectl describe virtualservice review</pre>
 ### Rest API example: Traffic shifting: 20% v1 - 80% v2 with API
 <pre>curl -H "Accept: application/json" -H "Content-Type: application/merge-patch+json" -X PATCH http://localhost:8001/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/reviews -d '{"metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"networking.istio.io/v1alpha3\",\"kind\":\"VirtualService\",\"metadata\":{\"annotations\":{},\"name\":\"reviews\",\"namespace\":\"default\"},\"spec\":{\"hosts\":[\"reviews\"],\"http\":[{\"route\":[{\"destination\":{\"host\":\"reviews\",\"subset\":\"v1\"},\"weight\":20},{\"destination\":{\"host\":\"reviews\",\"subset\":\"v2\"},\"weight\":80}]}]}}\n"}},"spec":{"http":[{"route":[{"destination":{"host":"reviews","subset":"v1"},"weight":20},{"destination":{"host":"reviews","subset":"v2"},"weight":80}]}]}}'
 </pre>
+
+Verify that the virutal service has been implemented as expected:
+<pre>$kubectl describe virtualservice review</pre>
+
