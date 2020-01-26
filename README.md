@@ -81,7 +81,7 @@ reviews-v2-7cdb7475fb-wjqrl      2/2     Running   0          2m34s   10.46.0.10
 reviews-v3-8496dbbbbf-4ftsq      2/2     Running   0          2m34s   10.38.0.5    worker1   none           none
 </pre>
 ### Bookinfo Application add ingress gateway
-<pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>cd cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f bookinfo-gateway.yaml </pre>
 Retrive external IP:
 <pre>kubectl get svc -n istio-system | grep ingress </pre>
@@ -96,7 +96,7 @@ http://10.10.20.30/productpage
 ##### Expected output
 
 ### Route based on application version: VirtualService
-<pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
+<pre>cd cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
 <pre>$kubectl describe virtualservice review</pre>
