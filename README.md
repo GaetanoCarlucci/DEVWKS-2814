@@ -115,8 +115,14 @@ In this example, we create 3 subsets named “v1”, “v2” and “v3” that 
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f destination-rule-all.yaml </pre>
 ##### Expected output
-
-
+<pre>kubectl  get destinationrule</pre>
+<pre>
+NAME          HOST          AGE
+details       details       13s
+productpage   productpage   13s
+ratings       ratings       13s
+reviews       reviews       13s
+</pre>
 ### Route based on application version: VirtualService
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
