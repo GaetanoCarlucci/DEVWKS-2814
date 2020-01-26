@@ -109,6 +109,9 @@ http://10.10.20.30/productpage
   ![Web Page](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/page.PNG)
 
 ### Route based on application version: DestinationRule
+We need to create a Destination Rule to define service subset which for example we group pods by their version. <br>
+Then we can use these service subsets in the routing rules of Istio virtual services to control the traffic to different instances of mesh services. <br>
+In this example, we create 3 subsets named “v1”, “v2” and “v3” that match respectively pods with labels **“version: v1”**, **“version: v2”** and **“version: v3”**. The labels are defined in the Kubernetes pods in the booking manifest file.
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f destination-rule-all.yaml </pre>
 ##### Expected output
