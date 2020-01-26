@@ -146,6 +146,25 @@ Modify **virtual-service-reviews-jason-v2-v3.yaml** by inserting your name and a
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
+Name:         reviews
+...
+Spec:
+  Hosts:
+    reviews
+  Http:
+    Match:
+      Headers:
+        End - User:
+          Exact:  gaetano
+    Route:
+      Destination:
+        Host:    reviews
+        Subset:  v2
+    Route:
+      Destination:
+        Host:    reviews
+        Subset:  v3
+Events:          <none>
 
 ### Traffic shifting: 80% v1 - 20% v2
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
