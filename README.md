@@ -67,7 +67,7 @@ In this way, all traffic that the mesh services send and receive (data plane tr
 Each pod in the review service has a Kubernetes label that defines the version of the app. This is important for Istio to route traffic based on that version.<br>
 <pre>istioctl kube-inject -f bookinfo.yaml > bookinfo_with_istio.yaml </pre>
 <pre>cat bookinfo_with_istio.yaml </pre>
-<pre>kubectl apply –f bookinfo_with_istio.yaml  </pre>
+<pre>kubectl apply -f bookinfo_with_istio.yaml  </pre>
 <pre>kubectl get pods -o wide </pre>
 
 ##### Expected output
@@ -96,7 +96,7 @@ http://10.10.20.30/productpage
 ### Route based on user identity
 <pre>cd /home/developer/istio-1.2.2/samples/networking/ </pre>
 Modify **virtual-service-reviews-jason-v2-v3.yaml** by inserting your name and apply it.
-<pre>kubectl apply –f virtual-service-reviews-jason-v2-v3.yaml </pre>
+<pre>kubectl apply -f virtual-service-reviews-jason-v2-v3.yaml </pre>
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>kubectl describe virtualservice review</pre>
