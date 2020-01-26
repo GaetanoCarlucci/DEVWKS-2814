@@ -30,7 +30,7 @@ Istio is an open source service mesh which is also packaged and supported in the
 
 ## Bookinfo App: service mesh topology with Istio
 
-  ![Sandbox layout](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology.PNG)
+  ![Bookinfo App](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/bookinfo_mesh_topology.PNG)
 
 
 ## Sequence of commands
@@ -105,6 +105,8 @@ Retrive external IP:
 
 ### Bookinfo Application: try it out 
 http://10.10.20.30/productpage 
+##### Expected output
+  ![Web Page](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/page.PNG)
 
 ### Route based on application version: DestinationRule
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
@@ -139,4 +141,3 @@ Verify that the virtual service has been implemented as expected:
 ##### Expected output
 Verify that the virtual service has been implemented as expected:
 <pre>$kubectl describe virtualservice review</pre>
-
