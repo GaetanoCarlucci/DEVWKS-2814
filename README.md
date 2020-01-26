@@ -124,7 +124,7 @@ productpage   productpage   13s
 ratings       ratings       13s
 reviews       reviews       13s
 </pre>
-### Route based on application version: VirtualService
+### Route based on application version: VirtualService - Route all traffic to version 1
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
@@ -139,6 +139,12 @@ Name:         reviews
         Host:    reviews
         Subset:  v1
 </pre>
+### Exercise: Route all traffic to Version 2
+Modify **virtual-service-all-v1.yaml**
+<pre>
+
+</pre>
+
 
 ### Route based on user identity
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
