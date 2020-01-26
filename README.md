@@ -126,7 +126,18 @@ reviews       reviews       13s
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-all-v1.yaml </pre>
 ##### Expected output
-<pre>$kubectl describe virtualservice review</pre>
+<pre>$kubectl describe virtualservice review
+Name:         reviews
+....
+  Hosts:
+    reviews
+  Http:
+    Route:
+      Destination:
+        Host:    reviews
+        Subset:  v1
+Events:          <none>
+</pre>
 
 ### Route based on user identity
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
