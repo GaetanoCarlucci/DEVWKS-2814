@@ -164,6 +164,9 @@ Spec:
         Host:    reviews
         Subset:  v3
 </pre>
+  ![Login](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/login.PNG)
+
+
 ### Traffic shifting: 80% v1 - 20% v2
 <pre>cd /home/developer/istio-1.2.2/samples/bookinfo/networking/ </pre>
 <pre>kubectl apply -f virtual-service-reviews-80-20.yaml </pre>
