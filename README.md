@@ -1,7 +1,7 @@
 # DEVWKS-2814
 <br>
 
-You can reproduce this lab be reserving this devnet sandobx:  ![Istio 1.2](https://github.com/GaetanoCarlucci/DEVWKS-2814/blob/master/sandbox_layout.PNG) https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology
+You can reproduce this lab be reserving this devnet sandobx:  ![Istio 1.2](https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology)
 
 **Session Code:**  DEVWKS-2814 <br>
 **WebEX Room:** http://cs.co/eventsbot#DEVWKS-2814 <br>
