@@ -1,4 +1,4 @@
-# DEVWKS-2814
+# Let's Play with Istio: service meshes for high-scale container environments
 <br>
 
 You can reproduce this lab be reserving this devnet sandobx:  [Istio 1.2](https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology)
