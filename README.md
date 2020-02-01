@@ -1,7 +1,7 @@
-# Let's Play with Istio: service meshes for high-scale container environments
+# DEVWKS-2814 Let's Play with Istio: service meshes for high-scale container environments
 <br>
 
-You can reproduce this lab be reserving this [DevNet] (https://devnetsandbox.cisco.com/) sandbox: [Istio 1.2](https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology)
+You can reproduce the [DevNet] (https://devnetsandbox.cisco.com/) workshop by reserving the Sandbox here: [Istio 1.2](https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology) <br>
 The Sandbox contains an up and running Kubernetes cluster with Istio enabled that you can use to play with Istio!
 
 **Session Code:**  DEVWKS-2814 <br>
