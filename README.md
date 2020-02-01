@@ -1,4 +1,4 @@
-# DEVWKS-2814 Let's Play with Istio: service meshes for high-scale container environments
+# DEVWKS-2814: Let's Play with Istio
 <br>
 
 You can reproduce the [DevNet] (https://devnetsandbox.cisco.com/) workshop by reserving the Sandbox here: [Istio 1.2](https://devnetsandbox.cisco.com/RM/Diagram/Index/8b9512a7-d2e5-4699-8d7a-393d7434982f?diagramType=Topology) <br>
